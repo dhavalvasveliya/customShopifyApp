@@ -15,7 +15,9 @@ def respond():
     ratings = place['result']['rating']
     total_ratings = place['result']['user_ratings_total']
 
-    return render_template('ratings.html', ratings=ratings, total_ratings=total_ratings)
+    rating_response = {'rating':ratings,'totalratings':total_ratings}
+
+    return jsonify(rating_response)
 
 
 
