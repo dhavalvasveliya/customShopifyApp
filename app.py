@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify, render_template
+from importlib.resources import path
+from flask import Flask, request, jsonify, render_template, send_from_directory
 import googlemaps
 import os
 from dotenv import load_dotenv
@@ -17,9 +18,15 @@ def respond():
 
     rating_response = {'rating':ratings,'totalratings':total_ratings}
 
-    return jsonify(rating_response)
+    return render_template('ratings.html')
 
+@app.route('/staic/app.js')
+def jsfile():
+    return send_from_directory('app.js','static/app.js')
 
+@app.route('/staic/app.css')
+def cssfile():
+    return send_from_directory('app.css','static/app.css')
 
 
 @app.route('/')

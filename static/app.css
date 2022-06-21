@@ -12,7 +12,7 @@
 	 background-color: #f8f7fd;
 	 font-family: "Open Sans", sans-serif;
 }
- .rating {
+ #rating {
 	 display: flex;
 	 align-items: center;
 	 column-gap: 0.75rem;
